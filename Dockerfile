@@ -52,6 +52,7 @@ RUN { \
     echo 'php_admin_value[upload_tmp_dir] = /tmp'; \
     echo 'php_admin_value[session.save_path] = /tmp'; \
     echo 'php_admin_value[open_basedir] = /var/www:/tmp'; \
+    echo 'php_admin_value[disable_functions] = system, exec, shell_exec, passthru, show_source, popen, proc_open'; \
   } >> /usr/local/etc/php-fpm.d/www.conf
 
 WORKDIR /var/www
