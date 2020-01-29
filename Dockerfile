@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:7.4.2-fpm
 
 # install the PHP extensions we need
 RUN set -ex; \
@@ -52,7 +52,7 @@ RUN { \
     echo 'php_admin_value[post_max_size] = 16M'; \
     echo 'php_admin_value[upload_tmp_dir] = /tmp'; \
     echo 'php_admin_value[session.save_path] = /tmp'; \
-    echo 'php_admin_value[open_basedir] = /var/www:/tmp'; \
+    echo 'php_admin_value[open_basedir] = /var/www:/var/wordpress:/tmp'; \
     echo 'php_admin_value[disable_functions] = system, exec, shell_exec, passthru, show_source, popen, proc_open'; \
   } >> /usr/local/etc/php-fpm.d/www.conf
 
