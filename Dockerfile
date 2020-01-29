@@ -48,8 +48,8 @@ RUN { \
     > /usr/local/etc/php/conf.d/email.ini; \
   cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini; \
   { \
-    echo 'php_admin_value[upload_max_filesize] = 16M'; \
-    echo 'php_admin_value[post_max_size] = 16M'; \
+    echo 'php_admin_value[upload_max_filesize] = 100M'; \
+    echo 'php_admin_value[post_max_size] = 100M'; \
     echo 'php_admin_value[upload_tmp_dir] = /tmp'; \
     echo 'php_admin_value[session.save_path] = /tmp'; \
     echo 'php_admin_value[open_basedir] = /var/www:/var/wordpress:/tmp'; \
